@@ -24,6 +24,7 @@ class CreateUserService {
 
         if (userAlreadyExists) {
             throw new Error("User already exists");
+
         }
 
         //cadastrar usuário no banco de dados
