@@ -20,7 +20,16 @@ export function isAutheticated(
     //Pegando apenas o token
     const [, token] = authToken.split(' ');
 
-    console.log(token)
+    try {
+        //Validar token
+        const { sub } = verify(
+            token,
+            process.env.JWT_SECRET
+        ) as Payload;
 
-    return next();
+        return next();
+
+    } catch (error) {
+        return res.status(401).end();
+    }
 }
