@@ -20,7 +20,19 @@ export function isAutheticated(
     //Pegando apenas o token
     const [, token] = authToken.split(' ');
 
-    console.log(token)
+    try {
+        //Validar token
+        const { sub } = verify(
+            token,
+            process.env.JWT_SECRET
+        ) as Payload;
 
-    return next();
+        //Recuperar o id do token e colocar dentro de uma variável user_id dentro do Request
+        req.user_id = sub;
+
+        return next();
+
+    } catch (error) {
+        return res.status(401).end();
+    }
 }
