@@ -16,15 +16,13 @@ class CreateProductController {
             throw new Error("error sending file");
         } else {
 
-            const { filename } = req.file;
-
-            console.log('meu arquivo', filename)
+            const { originalname, filename: banner } = req.file;
 
             const product = await createProductService.execute({
                 name,
                 price,
                 description,
-                banner: '',
+                banner: banner,
                 category_id
             });
 
