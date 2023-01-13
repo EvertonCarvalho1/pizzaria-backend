@@ -12,21 +12,30 @@ class CreateProductController {
             category_id
         } = req.body
 
-        let banner = '';
+        if (!req.file) {
+            throw new Error("error sending file");
+        } else {
 
-        const product = await createProductService.execute({
-            name,
-            price,
-            description,
-            banner,
-            category_id
-        });
+            const { filename } = req.file;
 
-        return res.json(product);
+            console.log('meu arquivo', filename)
+
+            const product = await createProductService.execute({
+                name,
+                price,
+                description,
+                banner: '',
+                category_id
+            });
+
+            return res.json(product);
+        }
     }
 }
 
 export { CreateProductController }
+
+
 
 
 
