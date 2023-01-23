@@ -9,6 +9,7 @@ import { ListCategoryController } from './controllers/category/ListCategoryContr
 import { CreateProductController } from './controllers/product/CreateProductController';
 import { ListbyCategoryController } from './controllers/product/ListbyCategoryController';
 import { CreateOrderController } from './controllers/order/CreateOrderController';
+import { RemoveOrderController } from './controllers/order/RemoveOrderController';
 
 import { isAutheticated } from './middlewares/isAutheticated';
 
@@ -26,6 +27,7 @@ const listCategoryController = new ListCategoryController();
 const createProductController = new CreateProductController();
 const listbyCategoryController = new ListbyCategoryController();
 const createOrderController = new CreateOrderController();
+const removeOrderController = new RemoveOrderController();
 
 // -- ROTAS USER --
 router.post('/users', createUserController.handle);
@@ -46,6 +48,8 @@ router.get('/category/product', isAutheticated, listbyCategoryController.handle)
 
 //-- ROTAS ORDER
 router.post('/order', isAutheticated, createOrderController.handle);
+
+router.delete('/order', isAutheticated, removeOrderController.handle);
 
 
 export { router };

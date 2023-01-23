@@ -11,6 +11,8 @@ class RemoveOrderService {
                 id: order_id
             }
         });
+
+        return order;
     }
 }
 
