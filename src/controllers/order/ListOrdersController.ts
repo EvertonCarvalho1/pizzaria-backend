@@ -1,12 +1,12 @@
 import { Request, Response } from 'express';
-import { ListOrdersServices } from '../../services/order/ListOrdersServices';
+import { ListOrdersService } from '../../services/order/ListOrdersService';
 
 class ListOrdersController {
     async handle(req: Request, res: Response) {
 
-        const listOrdersServices = new ListOrdersServices();
+        const listOrdersService = new ListOrdersService();
 
-        const orders = await listOrdersServices.execute();
+        const orders = await listOrdersService.execute();
 
         return res.json(orders);
     }
