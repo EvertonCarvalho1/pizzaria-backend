@@ -1,13 +1,13 @@
 import { Request, Response } from 'express';
-import { AddItemServices } from '../../services/order/AddItemServices';
+import { AddItemService } from '../../services/order/AddItemService';
 
 class AddItemController {
     async handle(req: Request, res: Response) {
         const { order_id, product_id, amount } = req.body;
 
-        const addItemServices = new AddItemServices();
+        const addItemService = new AddItemService();
 
-        const order = await addItemServices.execute({
+        const order = await addItemService.execute({
             order_id,
             product_id,
             amount
