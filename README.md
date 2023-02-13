@@ -7,7 +7,7 @@
 * [Licença](#balance_scale-licença)
 
 ## Sobre
-Backend completo para pizzaria desenvolvida durante o curso [Projeto Completo NodeJS, React, React Native, TypeScript](https://www.udemy.com/course/dev-fullstack/), do prof. Matheus Fraga.<br />
+Backend completo para pizzaria desenvolvido durante o curso [Projeto Completo NodeJS, React, React Native, TypeScript](https://www.udemy.com/course/dev-fullstack/), do prof. Matheus Fraga.<br />
 
 ## :hammer_and_wrench: Tecnologias
 * Back-end
@@ -24,7 +24,7 @@ $ git clone https://github.com/EvertonCarvalho1/pizzaria_backend.git
 
 ### __Back-end__
 Na pasta backend, renomeie o arquivo _.env.example_ para _.env_<br/>
-Informe a URL da API na variável __DATABASE_URL__.<br/>
+Informe os dados do banco PostgreSQL na variável __DATABASE_URL__.<br/>
 Informe a palavra secreta da API na variável __JWT_SECRET__<br/>
 ```bash
 # Instale as dependências
