@@ -1,7 +1,7 @@
 # 🍕 pizzaria-backend 🍕
 
 ## Conteúdo
-* [Sobre a aplicação](#sobre-a-aplicação)
+* [Sobre](#sobre)
 * [Tecnologias](#hammer_and_wrench-tecnologias)
 * [Iniciando a Aplicação](#car-Iniciando-a-aplicação)
 * [Licença](#balance_scale-licença)
